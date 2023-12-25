@@ -1,0 +1,21 @@
+<div>
+    <form method="POST" action="/topic-search">
+
+      <label>Enter the Topic of Your Interest</label>
+      <input type="text" id="ttext" name="topic">
+
+      <select id="sortBy" name="Sort">
+        <option value="relevancy">relevancy</option>
+        <option value="popularity">popularity</option>
+        <option value="publishedAt">publishedAt</option>
+      </select>
+
+      <label>Enter The number of results to be return</label>
+      <input type="text" id="tnumber" name="num">
+
+      <button type="submit">Submit</button>
+    </form>
+    <p>
+      <%= locals.content1 %>
+    </p>
+  </div>

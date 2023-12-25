@@ -8,79 +8,23 @@
 </head>
 
 <body>
-  <div>
-    <form method="POST" action="/topic-search">
 
-      <label>Enter the Topic of Your Interest</label>
-      <input type="text" id="ttext" name="topic">
+  <header>
+    <img src="" alt="logo" />
+    <a href="/news_source">
+      Source
+    </a>
 
-      <select id="sortBy" name="Sort">
-        <option value="relevancy">relevancy</option>
-        <option value="popularity">popularity</option>
-        <option value="publishedAt">publishedAt</option>
-      </select>
+  </header>
+  <form>
+    <button type="submit" formaction="/news_based_on_user_request">
+      <P>Search for articles on the web that mention a keyword or phrase</P>
+    </button>
+    <button type="submit" formaction="/news_headlines">
+      <P>Get the current top headlines for a country or category</P>
+    </button>
+  </form>
 
-      <label>Enter The number of results to be return</label>
-      <input type="text" id="tnumber" name="num">
-
-      <button type="submit">Submit</button>
-    </form>
-    <p>
-      <%= locals.content1 %>
-    </p>
-  </div>
-
-  <div>
-    <form method="POST" action="/topic-headlines">
-
-      <select id="country" name="country">
-        <option value="us"> United States</option>
-        <option value="in">India</option>
-        <option value="ru">Russia</option>
-        <option value="au">Australia</option>
-        <option value="ae"> United Arab Emirates</option>
-      </select>
-
-
-      <select id="category" name="category">
-        <option value="general">General</option>
-        <option value="business">Business</option>
-        <option value="entertainment">Entertainment</option>
-        <option value="health">Health</option>
-        <option value="science">Science</option>
-        <option value="sports">Sports</option>
-        <option value="technology">Technology</option>
-      </select>
-
-      <label>Enter The number of Page</label>
-      <input type="text" id="htn" name="hnum">
-
-      <button type="submit">Submit</button>
-      <p>
-        <%= locals.content2 %>
-      </p>
-    </form>
-  </div>
-
-  <div>
-    <h1>News publishers that top headlines are available from.</h1>
-
-    <form method="POST" action="/topic-sources">
-
-      <select id="country2" name="country2">
-        <option value="us"> United States</option>
-        <option value="in">India</option>
-        <option value="ru">Russia</option>
-        <option value="au">Australia</option>
-        <option value="ae"> United Arab Emirates</option>
-      </select>
-
-
-      <button type="submit">Submit</button>
-
-
-      <p><%= locals.content3 %></p>
-  </div>
 
 </body>
 
