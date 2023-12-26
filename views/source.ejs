@@ -1,17 +1,35 @@
-<div>
-    <h1>News publishers that top headlines are available from.</h1>
+<%- include("partials/header.ejs") %>
+<a class="h" href="/home">#HOME</a>
+<h1 class="sh1">News publishers that top headlines are available from.</h1>
+<div class="smain">
 
-    <form method="POST" action="/topic-sources">
+  <form method="POST" action="/topic-sources">
 
-      <select id="country2" name="country2">
-        <option value="us"> United States</option>
-        <option value="in">India</option>
-        <option value="ru">Russia</option>
-        <option value="au">Australia</option>
-        <option value="ae"> United Arab Emirates</option>
-      </select>
+    <select id="country2" name="country2">
+      <option value="us"> United States</option>
+      <option value="in">India</option>
+      <option value="ru">Russia</option>
+      <option value="au">Australia</option>
+      <option value="ae"> United Arab Emirates</option>
+    </select>
 
-      <button type="submit">Submit</button>
+    <button type="submit" id="btn2">Submit</button>
 
-      <p><%= locals.content3 %></p>
-  </div>
+
+</div>
+<% if(locals.content3){ %>
+<%const l=content3.sources.length %>
+<%for(let i=0;i<l-1 && content3.sources[i] ;i++){  %>
+<% const name=content3.sources[i].name %>
+<% const url=content3.sources[i].url %>
+<% const desc=content3.sources[i].description %>
+<div class="content3">
+  <h2><%= name %></h2>
+  <p><%= desc %></p>
+  <a href="<%= url %>">Read more...</a>
+</div>
+<hr />
+<% } %>
+<% } %>
+
+<%- include("partials/footer.ejs") %>

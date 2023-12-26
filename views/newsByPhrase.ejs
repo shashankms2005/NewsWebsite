@@ -1,21 +1,42 @@
-<div>
-    <form method="POST" action="/topic-search">
+<%- include("partials/header.ejs") %>
+<a class="h" href="/home">#HOME</a>
+<div class="phasebody">
+  <form method="POST" action="/topic-search">
 
-      <label>Enter the Topic of Your Interest</label>
-      <input type="text" id="ttext" name="topic">
-
+    <input type="text" id="ttext" name="topic" placeholder="Enter the Topic of Your Interest">
+    <div class="pb">
       <select id="sortBy" name="Sort">
-        <option value="relevancy">relevancy</option>
-        <option value="popularity">popularity</option>
-        <option value="publishedAt">publishedAt</option>
+        <option value="relevancy">Relevancy</option>
+        <option value="popularity">Popularity</option>
+        <option value="publishedAt">PublishedAt</option>
       </select>
 
-      <label>Enter The number of results to be return</label>
-      <input type="text" id="tnumber" name="num">
+      <input type="text" id="tnumber" name="num" placeholder="Enter The required number of results">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
 
-      <button type="submit">Submit</button>
-    </form>
-    <p>
-      <%= locals.content1 %>
-    </p>
-  </div>
+
+<% if(locals.content1){ %>
+<%const l=content1.totalResults %>
+<%for(let i=0;i<l-1 && content1.articles[i] ;i++){  %>
+<% const img=content1.articles[i].urlToImage %>
+<% const url=content1.articles[i].url %>
+<% const title=content1.articles[i].title %>
+<% const desc=content1.articles[i].description %>
+<% const date=content1.articles[i].publishedAt %>
+<%if (img) { %>
+<div class="npdiv">
+  <img src="<%= img %>" alt="<%= title %> Image" />
+  <h1><%= title %></h1>
+  <p class="npp"><%= desc %></p>
+  <p>Published at: <%= date %></p>
+  <a href="<%= url %>">Read more...</a>
+</div>
+<hr />
+<% } %>
+<% } %>
+<% } %>
+
+<%- include("partials/footer.ejs") %>

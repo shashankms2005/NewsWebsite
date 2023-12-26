@@ -1,4 +1,6 @@
-<div>
+<%- include("partials/header.ejs") %>
+  <a class="h" href="/home">#HOME</a>
+  <div class="hmain">
     <form method="POST" action="/topic-headlines">
 
       <select id="country" name="country">
@@ -19,13 +21,29 @@
         <option value="sports">Sports</option>
         <option value="technology">Technology</option>
       </select>
+      <input type="text" id="htn" name="hnum" placeholder="Number of Page">
 
-      <label>Enter The number of Page</label>
-      <input type="text" id="htn" name="hnum">
-
-      <button type="submit">Submit</button>
-      <p>
-        <%= locals.content2 %>
-      </p>
+      <button type="submit" id="btn">Submit</button>
     </form>
   </div>
+  <% if(locals.content2){ %>
+  <%const l=content2.totalResults %>
+  <%for(let i=0;i<l-1 && content2.articles[i] ;i++){  %>
+  <% const img=content2.articles[i].urlToImage %>
+  <% const url=content2.articles[i].url %>
+  <% const title=content2.articles[i].title %>
+  <% const desc=content2.articles[i].description %>
+  <% const date=content2.articles[i].publishedAt %>
+  <%if (img) { %>
+  <div class="npdiv">
+    <img src="<%= img %>" alt="<%= title %> Image" />
+    <h1><%= title %></h1>
+    <p class="npp"><%= desc %></p>
+    <p>Published at: <%= date %></p>
+    <a href="<%= url %>">Read more...</a>
+  </div>
+  <hr />
+  <% } %>
+  <% } %>
+  <% } %>
+  <%- include("partials/footer.ejs") %>

@@ -30,7 +30,7 @@ app.post("/topic-search", async (req, res) => {
     const topic = await axios.get(
       `https://newsapi.org/v2/everything?q=${q}&language=en&pageSize=${n}&sortBy=${s}&apiKey=c83d15300a934ef086c96864fae2667a`
     );
-    res.render("newsByPhrase.ejs", { content1: JSON.stringify(topic.data) });
+    res.render("newsByPhrase.ejs", { content1: topic.data });
   } catch (error) {
     console.error(error.message);
   }
@@ -44,7 +44,7 @@ app.post("/topic-headlines", async (req, res) => {
     const topic = await axios.get(
       `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&page=${num}&apiKey=c83d15300a934ef086c96864fae2667a`
     );
-    res.render("newsHeadings.ejs", { content2: JSON.stringify(topic.data) });
+    res.render("newsHeadings.ejs", { content2: topic.data });
   } catch (error) {
     console.error(error.message);
   }
@@ -56,10 +56,14 @@ app.post("/topic-sources", async (req, res) => {
     const topic = await axios.get(
       `https://newsapi.org/v2/top-headlines/sources?country=${country2}&category=general&apiKey=c83d15300a934ef086c96864fae2667a`
     );
-    res.render("source.ejs", { content3: JSON.stringify(topic.data) });
+    res.render("source.ejs", { content3: topic.data });
   } catch (error) {
     console.error(error.message);
   }
+});
+
+app.get("/home", (req, res) => {
+  res.render("index.ejs");
 });
 
 app.listen(port, () => {

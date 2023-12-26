@@ -1,0 +1,188 @@
+body {
+  background-image: url("/backgroundimage.webp");
+  background-size: cover; /* Adjusts the size of the background image to cover the entire element */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+}
+header {
+  display: flex;
+  justify-content: space-around;
+}
+header > img {
+  height: 200px;
+  width: 200px;
+  align-self: center;
+  border-radius: 150px;
+}
+header > a {
+  align-self: center;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 40px;
+  font-family: sans-serif;
+  color: red;
+}
+.mainbody > form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+.mainbody > form > button {
+  margin: 5px;
+  border-radius: 20px;
+  background-color:tan;
+  transition: background-color 0.01s ease;
+  opacity: 0.8;
+}
+
+.mainbody > form > button:active {
+  background-color: #1f618d;
+  box-shadow: 20px 20px black;
+}
+.mainbody > form > button > p {
+  margin: 0px;
+  padding: 0px;
+  font-size: 25px;
+  font-family: "Rubik Doodle Shadow", sans-serif;
+  color: black;
+
+}
+.sh1 {
+  text-align: center;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+}
+footer > p {
+  align-self: center;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 900;
+  font-size: 25px;
+  color: gold;
+}
+.phasebody,
+.hmain {
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.phasebody > form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.smain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ttext {
+  width: 100vh;
+  height: 50px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 0px;
+  border: 2px solid;
+}
+#sortBy,
+#country,
+#category,
+#htn,
+#country2 {
+  border: 2px solid;
+  font-weight: 400;
+  border-radius: 20px;
+  font-size: 25px;
+}
+.content3 > p,
+.content3 > h2 {
+  text-align: center;
+}
+#htn {
+  width: 25%;
+}
+#btn,
+#btn2 {
+  font-size: 25px;
+  border-radius: 30px;
+  align-self: center;
+}
+.pb {
+  display: flex;
+  justify-content: space-around;
+}
+.pb > input {
+  font-weight: 700;
+  border-radius: 20px;
+  font-size: 20px;
+  width: 60%;
+  text-align: center;
+}
+.phasebody > form > button {
+  width: 90%;
+  align-self: center;
+  border-radius: 30px;
+  font-size: 20px;
+}
+.npdiv {
+  margin: 15px 0px;
+}
+.npdiv > img {
+  width: 300px;
+  height: 150px;
+  float: left;
+  margin: 5px;
+}
+.npdiv>h1{
+    color: Orange;
+}
+.content3>h2{
+    margin: 0px;
+    padding: 0px;
+    margin-top: 10px;
+    color: Orange;
+}
+.npdiv>p{
+    color: rgb(237, 224, 226);
+}
+.content3>p{
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    color: rgb(237, 224, 226);
+}
+.npdiv > a,
+.content3 > a {
+  text-decoration: none;
+  font-size: 25px;
+  margin-left: 10px;
+  color: red;
+}
+.content3 > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+.npp {
+  font-size: 25px;
+  font-weight: 500;
+}
+.h {
+  position: relative;
+  left: 48%;
+  text-decoration: none;
+  font-size: larger;
+  font-size: 20px;
+  border: 1px solid;
+  padding: 3px;
+  color: rgb(164, 233, 27);
+}
+.sh1{
+    color: aliceblue;
+}

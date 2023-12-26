@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News</title>
-</head>
-
-<body>
-
-  <header>
-    <img src="" alt="logo" />
-    <a href="/news_source">
-      Source
-    </a>
-
-  </header>
+<%- include("partials/header.ejs") %>
+<div class="mainbody">
   <form>
     <button type="submit" formaction="/news_based_on_user_request">
       <P>Search for articles on the web that mention a keyword or phrase</P>
@@ -24,8 +8,5 @@
       <P>Get the current top headlines for a country or category</P>
     </button>
   </form>
-
-
-</body>
-
-</html>
+</div>
+<%- include("partials/footer.ejs") %>
